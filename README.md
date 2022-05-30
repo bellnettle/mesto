@@ -17,6 +17,7 @@
 
 ## **Ссылка на сайт**
 
+https://bellnettle.github.io/mesto/
 
 ## **Планы по доработке**
 
