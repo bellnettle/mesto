@@ -1,0 +1,9 @@
+.popup__input-container {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.popup__input-container:first-of-type {
+    margin-bottom: 30px;
+}

@@ -1,0 +1,21 @@
+.profile__add-button {
+    grid-area: add-button;
+    justify-self: end;
+    border: solid 2px white;
+    padding: 14px 64px;
+    max-width: 22px;
+
+}
+
+.profile__add-button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 910px) {
+    .profile__add-button {
+        justify-self: center;
+        padding: 17px 132px;
+        max-width: 16px;
+    }
+}
