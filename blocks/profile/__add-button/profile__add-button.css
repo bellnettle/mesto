@@ -23,5 +23,6 @@
     .profile__add-button {
         justify-self: center;
         padding: 23px 138px;
+        background-size: 16px;
     }
 }
