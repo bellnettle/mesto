@@ -1,19 +1,19 @@
 .profile__info {
     grid-area: info;
     display: grid;
-    grid-template-rows: min-content;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr min-content;
     grid-template-areas:
         "title edit-button"
         "subtitle .";
+    column-gap: 22px;
     row-gap: 16px;
-    column-gap: 18px;
 }
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1023px) {
     .profile__info {
         text-align: center;
         row-gap: 14px;
-        column-gap: 1px;
+        column-gap: 10px;
     }
 }

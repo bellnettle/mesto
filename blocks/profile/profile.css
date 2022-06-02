@@ -11,7 +11,7 @@
     column-gap: 30px;
 }
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1023px) {
     .profile {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr max-content min-content;
@@ -20,5 +20,9 @@
             "info"
             "add-button";
         justify-items: center;
+
+        padding-top: 42px;
+        padding-bottom: 36px;
+        width: 100%;
     }
 }

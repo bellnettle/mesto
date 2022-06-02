@@ -3,14 +3,17 @@
     border: none;
     color: white;
 
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
 
-    padding: 14px 125px 18px;
+    padding: 12px 132px 16px;
     margin-top: 48px;
+
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 767px) {
@@ -24,5 +27,6 @@
 
 .popup__button:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.8;    
+    transition: 0.3s;
 }
