@@ -3,10 +3,10 @@
     background-image: url(../../../images/add-button.svg);
     background-repeat: no-repeat;
     background-position: center;
-    
-    outline: none;    
+
+    outline: none;
     border: solid 2px white;
-    
+
     grid-area: add-button;
     justify-self: end;
     padding: 23px 73px;
@@ -15,7 +15,7 @@
 
 .profile__add-button:hover {
     cursor: pointer;
-    opacity: 0.6;    
+    opacity: 0.6;
     transition: 0.3s;
 }
 
