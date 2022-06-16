@@ -36,16 +36,11 @@ function deleteElement(element) {
 //открыть изображение
 
 function showPopupFull(element) {
-  const popupTemplate = document.querySelector(".popup__template");
-  const popupFull = popupTemplate.content.cloneNode(true);
-
+  const popupFull = document.querySelector(".popup_type-full")
   popupFull.querySelector(".popup__image").src = element.src;
+  popupFull.querySelector(".popup__image").alt = element.alt;
   popupFull.querySelector(".popup__title").textContent = element.alt;
-
-  document.querySelector(".popup_type-full").classList.add("popup_opened");
-
-  popupTemplate.after(popupFull);
-
+  popupFull.classList.add("popup_opened");
 }
 
 
@@ -105,6 +100,10 @@ function addElement(evt) {
     event.target.classList.toggle("element__like_active")
   })
 
+  element.querySelector(".element__image").addEventListener("click", function (event) {
+    showPopupFull(event.target);
+  })
+
   parent.prepend(element);
   closePopup("_type-place");
 }
@@ -134,17 +133,17 @@ formProfile.addEventListener('submit', formSubmitHandler);
 
 //кнопки
 
-let editButton = page.querySelector(".profile__edit-button");
+const editButton = page.querySelector(".profile__edit-button");
 
-let closeButtonProfile = page.querySelector(".popup__close_type-profile");
-let closeButtonPlace = page.querySelector(".popup__close_type-place");
-let closeButtonImage = page.querySelector(".popup__close_type-full");
+const closeButtonProfile = page.querySelector(".popup__close_type-profile");
+const closeButtonPlace = page.querySelector(".popup__close_type-place");
+const closeButtonImage = page.querySelector(".popup__close_type-full");
 
-let addButton = page.querySelector(".profile__add-button");
+const addButton = page.querySelector(".profile__add-button");
 
-let basketButton = page.querySelectorAll(".element__basket");
+const basketButton = page.querySelectorAll(".element__basket");
 
-let likeButton = page.querySelectorAll(".element__like");
+const likeButton = page.querySelectorAll(".element__like");
 
 //открытие-закрытие попапа
 
@@ -167,6 +166,7 @@ addButton.addEventListener("click", function () { showPopup("_type-place") });
 closeButtonProfile.addEventListener("click", function () { closePopup("_type-profile") });
 closeButtonPlace.addEventListener("click", function () { closePopup("_type-place") });
 closeButtonImage.addEventListener("click", function () { closePopup("_type-full") });
+
 
 
 
