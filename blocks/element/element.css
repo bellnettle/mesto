@@ -5,7 +5,10 @@
     font-size: 0;
 
     width: 100%;
+    max-width: 282px;
     height: 100%;
 
     overflow: hidden;
+
+    position: relative;
 }
