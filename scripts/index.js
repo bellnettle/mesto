@@ -1,20 +1,17 @@
-const container = document.querySelector("#page")
-const popupFull = document.querySelector(".popup_type-full")
+const popupFull = document.querySelector(".popup_type-full");
+const page = document.querySelector(".page");
 
 const formAddCardElement = page.querySelector(".popup__form_type-place");
 
 const imgInput = formAddCardElement.querySelector(".popup__item_el_link");
 const titleInput = formAddCardElement.querySelector(".popup__item_el_title");
 
-const userImg = page.querySelector(".element__image");
-const userTitle = page.querySelector(".element__subtitle");
-
 const parentCard = document.querySelector('.elements__container')
 
 //карточки по умолчанию из массива
 
 initialCards.forEach(item => {
-  newCard = createCard(item.link, item.name);
+  const newCard = createCard(item.link, item.name);
   renderCard(newCard, parentCard);
 });
 
@@ -52,7 +49,7 @@ function renderCard(card, container) {
 
 
 formAddCardElement.addEventListener('submit', function (event) {
-  newCard = createCard(imgInput.value, titleInput.value);
+  const newCard = createCard(imgInput.value, titleInput.value);
   renderCard(newCard, parentCard);
   event.preventDefault();
   closePopup(page.querySelector(".popup_type-place"));
