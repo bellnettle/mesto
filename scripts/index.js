@@ -111,6 +111,87 @@ closeButtonPlace.addEventListener("click", function () { closePopup(page.querySe
 closeButtonImage.addEventListener("click", function () { closePopup(page.querySelector(".popup_type-full")) });
 
 
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}__input-error`);
+  inputElement.classList.add("popup__item_type-error");
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add("popup__input-error_active");
+};
+
+const hideInputError = (formElement, inputElement) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}__input-error`);
+  inputElement.classList.remove('popup__item_type-error');
+  errorElement.classList.remove('popup__input-error_active');
+  errorElement.textContent = '';
+};
+
+
+const checkInputValidity = (formElement, inputElement) => {
+  switch (inputElement.id) {
+    case "user-name":
+      if (inputElement.value.length < 2 && inputElement.value.length > 40) {
+        showInputError(formElement, inputElement, inputElement.validationMessage);
+      } else {
+        hideInputError(formElement, inputElement);
+      }
+      break;
+    case "user-info":
+    case "place-title":
+    case "place-link":
+  }
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+};
+
+
+
+const hasInvalidInput = (inputList) => {
+  return inputList.some((inputElement) => {
+    return !inputElement.validity.valid;
+  });
+}
+
+const toggleButtonState = (inputList, buttonElement) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add('popup__button_type-disabled');
+  } else {
+    buttonElement.classList.remove('popup__button_type-disabled');
+  }
+};
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll('.popup__item'));
+  const buttonElement = formElement.querySelector('.popup__button');
+  toggleButtonState(inputList, buttonElement);
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function () {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll('.popup'));
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+    });
+    const fieldsetList = Array.from(formElement.querySelectorAll('.popup__form'));
+
+    fieldsetList.forEach((fieldSet) => {
+      setEventListeners(fieldSet);
+    });
+  });
+}
+
+enableValidation();
+
+
+
 
 
 

@@ -55,14 +55,16 @@
                 <fieldset class="popup__input-container">
                     <input class="popup__item popup__item_el_name" type="text" id="user-name" name="user-name"
                         placeholder="Имя" required>
+                    <span class="popup__input-error  __input-error">Вы пропустили это поле</span>
                 </fieldset>
 
                 <fieldset class="popup__input-container">
                     <input class="popup__item popup__item_el_info" type="text" id="user-info" name="user-info"
                         placeholder="О себе" required>
+                    <span class="popup__input-error user-info__input-error">Вы пропустили это поле</span>
                 </fieldset>
 
-                <button type="submit" class="popup__button">Сохранить</button>
+                <button type="submit" class="popup__button popup__button_type-disabled">Сохранить</button>
 
             </form>
 
@@ -81,14 +83,17 @@
                 <fieldset class="popup__input-container">
                     <input class="popup__item popup__item_el_title" type="text" id="place-title" name="place-title"
                         placeholder="Название" required>
+                    <span class="popup__input-error place-title__input-error">Вы пропустили это поле</span>
                 </fieldset>
 
                 <fieldset class="popup__input-container">
                     <input class="popup__item popup__item_el_link" type="text" id="place-link" name="place-link"
                         placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error place-link__input-error">Вы пропустили это поле</span>
+
                 </fieldset>
 
-                <button type="submit" class="popup__button">Сохранить</button>
+                <button type="submit" class="popup__button popup__button_type-disabled">Создать</button>
 
             </form>
 

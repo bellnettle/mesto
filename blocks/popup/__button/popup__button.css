@@ -25,7 +25,7 @@
     }
 }
 
-.popup__button:hover {
+.popup__button:not(.popup__button_type-disabled):hover {
     cursor: pointer;
     opacity: 0.8;
     transition: 0.3s;
