@@ -14,7 +14,8 @@ const elementTemplate = document.querySelector('.elements__template');
 
 const popupProfile = page.querySelector(".popup_type-profile")
 const popupPlace = page.querySelector(".popup_type-place");
-const popupButtonPlace = popupPlace.querySelector('.popup__button')
+const popupButtonPlace = popupPlace.querySelector('.popup__button');
+const buttonElement = popupProfile.querySelector(".popup__button");
 
 //карточки по умолчанию из массива
 
@@ -60,6 +61,7 @@ formAddCardElement.addEventListener('submit', function (event) {
   event.preventDefault();
   closePopup(popupPlace);
   formAddCardElement.reset();
+
 })
 
 //редактирование профиля
@@ -101,6 +103,17 @@ function showPopup(popup) {
   popup.classList.add("popup_opened");
   currentPopup = popup;
   document.addEventListener("keydown", escPressed);
+  buttonElement.removeAttribute("disabled", false);
+  buttonElement.classList.remove('popup__button_type-disabled');
+  hideInputError(formProfile, nameInput, {
+    inputError: 'popup__item_type-error',
+    errorMessageClass: 'popup__input-error_active'
+  });
+  hideInputError(formProfile, jobInput, {
+    inputError: 'popup__item_type-error',
+    errorMessageClass: 'popup__input-error_active'
+  });
+
 }
 
 
@@ -117,6 +130,7 @@ editButton.addEventListener("click", function () {
 
 addButton.addEventListener("click", function () {
   popupButtonPlace.classList.add('popup__button_type-disabled');
+  popupButtonPlace.setAttribute("disabled", true);
   showPopup(popupPlace);
 });
 

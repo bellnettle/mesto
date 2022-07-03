@@ -3,4 +3,6 @@
     border: solid 1px #000000;
     color: #000000;
     opacity: 0.2;
+    box-sizing: border-box;
+    padding: 11px 131px 15px;
 }
