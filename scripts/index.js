@@ -129,6 +129,7 @@ editButton.addEventListener("click", function () {
 });
 
 addButton.addEventListener("click", function () {
+  formAddCardElement.reset();
   popupButtonPlace.classList.add('popup__button_type-disabled');
   popupButtonPlace.setAttribute("disabled", true);
   showPopup(popupPlace);
